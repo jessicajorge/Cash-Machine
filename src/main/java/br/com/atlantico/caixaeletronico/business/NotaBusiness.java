@@ -49,8 +49,8 @@ public class NotaBusiness {
 	}
 
 	public String sacar(Double valor) {
-		if(!(valor > 0 && valor < 10000)) {
-			return "Valor deve ser entre 0 e 10000";
+		if(!(valor > 0 && valor <= 10000)) {
+			return "Valor deve ser maior que 0 e menor ou igual a 10000";
 		}
 		List<Nota> notas = notaRepository.findAll();
 		Collections.sort(notas, new Comparator<Nota>() {
